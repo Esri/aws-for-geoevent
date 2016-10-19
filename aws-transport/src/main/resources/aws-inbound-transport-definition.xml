@@ -1,0 +1,42 @@
+<transport name="AwsIoTHubInboundTransport"
+  label="${com.esri.geoevent.transport.aws-transport.TRANSPORT_IN_LBL}"
+  contact="yourname@yourcompany.com"
+  version="10.5.0"
+  domain="com.esri.geoevent.transport.aws.inbound" type="inbound">
+
+  <description>${com.esri.geoevent.transport.aws-transport.TRANSPORT_IN_DESC}</description>
+
+  <propertyDefinitions>
+    <propertyDefinition propertyName="iotservicetype"
+      label="${com.esri.geoevent.transport.aws-transport.IOT_SERVICE_TYPE_LBL}"
+      description="${com.esri.geoevent.transport.aws-transport.IOT_SERVICE_TYPE_DESC}"
+      propertyType="String" defaultValue="IOT_TOPIC" mandatory="true"
+      readOnly="false" />
+    <propertyDefinition propertyName="deviceid"
+      label="${com.esri.geoevent.transport.aws-transport.TRANSPORT_IN_DEVICE_ID_LBL}"
+      description="${com.esri.geoevent.transport.aws-transport.TRANSPORT_IN_DEVICE_ID_DESC}"
+      propertyType="String" defaultValue="MyLightBlub" mandatory="false"
+      readOnly="false" />
+    <propertyDefinition propertyName="endpoint"
+      label="${com.esri.geoevent.transport.aws-transport.TRANSPORT_IN_ENDPOINT_LBL}"
+      description="${com.esri.geoevent.transport.aws-transport.TRANSPORT_IN_ENDPOINT_DESC}"
+      propertyType="String" defaultValue="A1OAECNIGB9KXE.iot.us-west-2.amazonaws.com"
+      mandatory="true" readOnly="false" />
+    <propertyDefinition propertyName="X509certificate"
+      label="${com.esri.geoevent.transport.aws-transport.TRANSPORT_IN_CERT_LBL}"
+      description="${com.esri.geoevent.transport.aws-transport.TRANSPORT_IN_CERT_DESC}"
+      propertyType="String" defaultValue="C:/temp/certs/cert.pem"
+      mandatory="true" readOnly="false" />
+    <propertyDefinition propertyName="privateKey"
+      label="${com.esri.geoevent.transport.aws-transport.TRANSPORT_IN_PRIVATEKEY_LBL}"
+      description="${com.esri.geoevent.transport.aws-transport.TRANSPORT_IN_PRIVATEKEY_DESC}"
+      propertyType="String" defaultValue="C:/tmp/certs/private.pem"
+      mandatory="true" readOnly="false" />
+    <propertyDefinition propertyName="topic"
+      label="${com.esri.geoevent.transport.aws-transport.TRANSPORT_IN_TOPIC_LBL}"
+      description="${com.esri.geoevent.transport.aws-transport.TRANSPORT_IN_TOPIC_DESC}"
+      propertyType="String" defaultValue="SBC/test" mandatory="true"
+      readOnly="false" />
+  </propertyDefinitions>
+
+</transport>
