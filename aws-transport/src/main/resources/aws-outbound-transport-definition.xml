@@ -1,7 +1,7 @@
-<transport name="AWSIoTHubOutboundTransport"
+<transport name="AWS-IoT"
   label="${com.esri.geoevent.transport.aws-transport.TRANSPORT_OUT_LBL}"
   contact="yourname@yourcompany.com"
-   version="10.5.0"
+  version="10.5.0"
   domain="com.esri.geoevent.transport.aws.outbound" type="outbound">
 
   <description>${com.esri.geoevent.transport.aws-transport.TRANSPORT_OUT_DESC}</description>

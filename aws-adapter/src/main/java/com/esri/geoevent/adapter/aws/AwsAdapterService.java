@@ -39,6 +39,7 @@ public class AwsAdapterService extends AdapterServiceBase
     try
     {
       xmlAdapterDefinition.loadConnector(getResourceAsStream("input-connector-definition.xml"));
+      xmlAdapterDefinition.loadConnector(getResourceAsStream("output-connector-definition.xml"));
     }
     catch (JAXBException e)
     {

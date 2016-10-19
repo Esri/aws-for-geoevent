@@ -43,28 +43,10 @@ public class AwsAdapter extends InboundAdapterBase
     LOGGER.debug("AWS Adapter created");
   }
 
-  public static void consoleDebugPrintLn(String msg)
-  {
-    String consoleOut = System.getenv("GEP_CONSOLE_OUTPUT");
-    if (consoleOut != null && "1".equals(consoleOut))
-    {
-      System.out.println(msg);
-    }
-  }
-
-  public static void consoleDebugPrint(String msg)
-  {
-    String consoleOut = System.getenv("GEP_CONSOLE_OUTPUT");
-    if (consoleOut != null && "1".equals(consoleOut))
-    {
-      System.out.print(msg);
-    }
-  }
-
   @Override
   protected GeoEvent adapt(ByteBuffer arg0, String arg1)
   {
-    // TODO Auto-generated method stub
+    // Dummy Adapter
     return null;
   }
 }

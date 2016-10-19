@@ -1,0 +1,19 @@
+<connectorDefinition label="${com.esri.geoevent.adapter.aws-adapter.OUT_CONNECTOR_LABEL}"
+  name="send-json-to-aws-iot-gateway" type="outbound">
+  <adapter uri="com.esri.ges.adapter.outbound/Generic-JSON/10.5.0"/>
+  <transport uri="com.esri.geoevent.transport.aws.outbound/AWS-IoT/10.5.0" />
+  <defaultName>json-awt-out</defaultName>
+  <description>${com.esri.geoevent.adapter.aws-adapter.OUT_CONNECTOR_DESC}</description>
+  <properties>
+    <hidden>
+    </hidden>
+    <shown>
+      <property label="AWS Host" name="host" type="String" source="transport" default="A1OAECNIGB9KXE.iot.us-west-2.amazonaws.com"/>
+      <property label="AWS Port" name="port" type="Integer" source="transport" default="8883"/>
+      <property label="AWS IoT topic" name="topic" type="String" source="transport" default="iotbutton/+"/>    
+      <property label="Private Key File" name="privateKey" type="String" source="transport" default="C:/TEMP/b9de8bdf85-certificate/private.pem"/>
+      <property label="Root CA File" name="rootCA" type="String" source="transport" default="C:/TEMP/b9de8bdf85-certificate/rootCA.pem"/>
+      <property label="Certificate File" name="certificate" type="String" source="transport" default="C:/TEMP/b9de8bdf85-certificate/cert.pem"/>
+    </shown>
+  </properties>
+</connectorDefinition>
