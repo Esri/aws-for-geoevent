@@ -2,7 +2,7 @@
   name="send-json-to-aws-iot-gateway" type="outbound">
   <adapter uri="com.esri.ges.adapter.outbound/Generic-JSON/10.5.0"/>
   <transport uri="com.esri.geoevent.transport.aws.outbound/AWS-IoT/10.5.0" />
-  <defaultName>json-awt-out</defaultName>
+  <defaultName>json-aws-out</defaultName>
   <description>${com.esri.geoevent.adapter.aws-adapter.CONNECTOR_OUT_DESC}</description>
   <properties>
     <shown>
