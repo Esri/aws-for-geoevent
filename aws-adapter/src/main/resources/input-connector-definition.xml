@@ -1,31 +1,34 @@
-<connectorDefinition label="${com.esri.geoevent.adapter.aws-adapter.IN_CONNECTOR_LABEL}"
+<connectorDefinition label="${com.esri.geoevent.adapter.aws-adapter.CONNECTOR_IN_LABEL}"
   name="receive-json-from-aws-iot-gateway" type="inbound">
   <adapter uri="com.esri.ges.adapter.inbound/Generic-JSON/10.5.0"/>
   <transport uri="com.esri.geoevent.transport.aws.inbound/AWS-IoT/10.5.0" />
   <defaultName>aws-json-in</defaultName>
-  <description>${com.esri.geoevent.adapter.aws-adapter.IN_CONNECTOR_DESC}</description>
+  <description>${com.esri.geoevent.adapter.aws-adapter.CONNECTOR_IN_DESC}</description>
   <properties>
+    <shown>
+      <property label="IoT Service Type" name="iotservicetype" source="transport" default="IOT_TOPIC"/>
+      <property label="Device Id Field Name" name="deviceid" source="transport" default="MyLightBlub"/>
+      <property label="Client Endpoint" name="endpoint" source="transport" default="A1OAECNIGB9KXE.iot.us-west-2.amazonaws.com"/>
+      <property label="Certificate" name="X509certificate" source="transport" default="C:/temp/certs/cert.pem"/>
+      <property label="PrivateKey" name="privateKey" source="transport" default="C:/tmp/certs/private.pem"/>
+      <property xlabel="AWS IoT Topic" name="topic" source="transport" default="SBC/test"/>
+      <property label="Create GeoEvent Definition" name="CreateGeoEventDefinition" source="adapter" default="true"/>
+      <property label="GeoEvent Definition Name (Existing)" name="ExistingGeoEventDefinitionName" source="adapter"/>
+      <property label="GeoEvent Definition Name (New)" name="NewGeoEventDefinitionName" source="adapter" default="NewFeatureGeoEventDef"/>
+      <property label="Build Geometry From Fields" name="BuildGeometryFromFields" source="adapter" default="false"/>
+      <property label="X Geometry Field" name="XGeometryField" source="adapter"/>
+      <property label="Y Geometry Field" name="YGeometryField" source="adapter"/>
+      <property label="Z Geometry Field" name="ZGeometryField" source="adapter"/>
+      <property label="wkid Geometry Field" name="WKIDGeometryField" source="adapter"/>
+      <property label="Well Known Text Geometry Field" name="WKTextGeometryField" source="adapter"/>
+    </shown>
+    <advanced>
+      <property label="Learning Mode" name="isLearningMode" source="adapter" default="false"/>
+      <property label="JSON Object Name" name="JsonObjectName" source="adapter"/>
+      <property label="Custom Date Format" name="CustomDateFormat" source="adapter"/>
+      <property label="As GeoJson" name="asGeoJson" source="adapter" default="false"/>
+    </advanced>
     <hidden>
     </hidden>
-    <shown>
-      <property label="AWS Host" name="host" type="String" source="transport" default="A1OAECNIGB9KXE.iot.us-west-2.amazonaws.com"/>
-      <property label="AWS Port" name="port" type="Integer" source="transport" default="8883"/>
-      <property label="AWS IoT topic" name="topic" type="String" source="transport" default="iotbutton/+"/>    
-      <property label="Private Key File" name="privateKey" type="String" source="transport" default="C:/TEMP/b9de8bdf85-certificate/private.pem"/>
-      <property label="Root CA File" name="rootCA" type="String" source="transport" default="C:/TEMP/b9de8bdf85-certificate/rootCA.pem"/>
-      <property label="Certificate File" name="certificate" type="String" source="transport" default="C:/TEMP/b9de8bdf85-certificate/cert.pem"/>
-      <property label="JSON Object Name" name="JsonObjectName" type="String" source="adapter" default=""/>
-      <property label="Create GeoEvent Definition" name="CreateGeoEventDefinition" type="Boolean" source="adapter" default="true"/>
-      <property label="New GeoEvent Definition Name" name="NewGeoEventDefinitionName" type="String" source="adapter" default="awsiotbutton"/>
-      <property label="Existing GeoEvent Definition Name" name="ExistingGeoEventDefinitionName" type="GeoEventDefinition" source="adapter" default="ExistingDef"/>
-      <property label="Build Geometry from Field" name="BuildGeometryFromFields" type="Boolean" source="adapter" default=""/>
-      <property label="X Geometry Field" name="XGeometryField" type="String" source="adapter" default=""/>  
-      <property label="Y Geometry Field" name="YGeometryField" type="String" source="adapter" default=""/>
-      <property label="Z Geometry Field" name="ZGeometryField" type="String" source="adapter" default=""/>
-      <property label="Well-Known Text Geometry Field" name="WKTextGeometryField" type="String" source="adapter" default=""/>
-      <property label="WKID Geometry Field" name="WKIDGeometryField" type="String" source="adapter" default=""/>
-      <property label="Custom Date Format" name="CustomDateFormat" type="String" source="adapter" default=""/>
-      <property label="Learning Mode" name="isLearningMode" type="Boolean" source="adapter" default="false"/>
-    </shown>
   </properties>
 </connectorDefinition>
