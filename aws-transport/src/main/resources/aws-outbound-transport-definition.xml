@@ -1,7 +1,7 @@
 <transport name="${component.name}"
   label="${com.esri.geoevent.transport.aws-transport.TRANSPORT_OUT_LBL}"
   contact="yourname@yourcompany.com"
-  version="${project.version}"
+  version="10.4.0"
   domain="${transport.outbound.domain}" type="outbound">
 
   <description>${com.esri.geoevent.transport.aws-transport.TRANSPORT_OUT_DESC}</description>
