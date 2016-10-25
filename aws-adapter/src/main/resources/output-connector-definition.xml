@@ -10,8 +10,8 @@
       <property label="AWS IoT Topic" name="topic" source="transport" default="geoevent/topic1"/>
       <property label="IoT Service Type" name="iotservicetype" source="transport" default="IOT_TOPIC"/>
       <property label="Thing Name" name="thingName" source="transport" default="thing1"/>
-      <property label="Certificate File" name="X509certificate" source="transport" default="C:/tmp/certs/cert.pem"/>
-      <property label="Private Key File" name="privateKey" source="transport" default="C:/tmp/certs/private.pem"/>
+      <property label="Certificate File" name="X509certificate" source="transport" default="C:/temp/certs/cert.pem"/>
+      <property label="Private Key File" name="privateKey" source="transport" default="C:/temp/certs/private.pem"/>
     </shown>
     <hidden>
       <property label="MIME Type" name="mimeType" source="adapter" default="application/json"/>

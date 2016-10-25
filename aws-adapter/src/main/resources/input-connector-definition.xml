@@ -11,7 +11,7 @@
       <property label="IoT Service Type" name="iotservicetype" source="transport" default="IOT_TOPIC"/>
       <property label="Thing Name" name="thingName" source="transport" default="thing1"/>
       <property label="Certificate" name="X509certificate" source="transport" default="C:/temp/certs/cert.pem"/>
-      <property label="PrivateKey" name="privateKey" source="transport" default="C:/tmp/certs/private.pem"/>
+      <property label="PrivateKey" name="privateKey" source="transport" default="C:/temp/certs/private.pem"/>
       <property label="Create GeoEvent Definition" name="CreateGeoEventDefinition" source="adapter" default="true"/>
       <property label="GeoEvent Definition Name (Existing)" name="ExistingGeoEventDefinitionName" source="adapter"/>
       <property label="GeoEvent Definition Name (New)" name="NewGeoEventDefinitionName" source="adapter" default="NewFeatureGeoEventDef"/>

@@ -34,13 +34,13 @@
     <propertyDefinition propertyName="X509certificate"
       label="${com.esri.geoevent.transport.aws-transport.TRANSPORT_OUT_CERT_LBL}"
       description="${com.esri.geoevent.transport.aws-transport.TRANSPORT_OUT_CERT_DESC}"
-      propertyType="String" defaultValue="C:/tmp/certs/cert.pem"
+      propertyType="String" defaultValue="C:/temp/certs/cert.pem"
       mandatory="true" readOnly="false" />
 
     <propertyDefinition propertyName="privateKey"
       label="${com.esri.geoevent.transport.aws-transport.TRANSPORT_OUT_PRIVATE_KEY_LBL}"
       description="${com.esri.geoevent.transport.aws-transport.TRANSPORT_OUT_PRIVATE_KEY_DESC}"
-      propertyType="String" defaultValue="C:/tmp/certs/private.pem"
+      propertyType="String" defaultValue="C:/temp/certs/private.pem"
       mandatory="true" readOnly="false" />
   </propertyDefinitions>
 
