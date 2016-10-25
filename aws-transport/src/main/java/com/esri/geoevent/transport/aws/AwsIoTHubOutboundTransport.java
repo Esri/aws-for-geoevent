@@ -50,7 +50,7 @@ public class AwsIoTHubOutboundTransport extends OutboundTransportBase
 
   // transport properties
   private String                    iotServiceType         = "";
-  private String                    deviceIdFieldName      = "";
+  private String                    thingName              = "";
 
   private String                    clientEndpoint         = "";
   private String                    x509Certificate        = "";
@@ -111,12 +111,12 @@ public class AwsIoTHubOutboundTransport extends OutboundTransportBase
       }
     }
     // Device Id Field Name
-    if (hasProperty("deviceid"))
+    if (hasProperty("thingName"))
     {
-      String newDeviceIdFieldName = getProperty("deviceid").getValueAsString();
-      if (!deviceIdFieldName.equals(newDeviceIdFieldName))
+      String newThingName = getProperty("thingName").getValueAsString();
+      if (!thingName.equals(newThingName))
       {
-        deviceIdFieldName = newDeviceIdFieldName;
+        thingName = newThingName;
         somethingChanged = true;
       }
     }
@@ -180,14 +180,14 @@ public class AwsIoTHubOutboundTransport extends OutboundTransportBase
     KeyStorePasswordPair pair = AwsIoTHubUtil.getKeyStorePasswordPair(x509Certificate, privateKey, null);
 
     // create AwsClient
-    clientId = String.format("%s-%s", deviceIdFieldName, new BigInteger(128, new SecureRandom()).toString(32));
+    clientId = String.format("%s-%s", thingName, new BigInteger(128, new SecureRandom()).toString(32));
     awsClient = new AWSIotMqttClient(clientEndpoint, clientId, pair.keyStore, pair.keyPassword);
 
     // attach device
     if (!isEventHubType)
     {
       // IoT Device attach
-      geIoTDevice = new AwsIoTHubDevice(deviceIdFieldName);
+      geIoTDevice = new AwsIoTHubDevice(thingName);
       LOGGER.info(System.currentTimeMillis() + ": ClientId: " + clientId + ": Attaching device:" + geIoTDevice.getThingName());
       awsClient.attach(geIoTDevice);
     }
@@ -264,8 +264,7 @@ public class AwsIoTHubOutboundTransport extends OutboundTransportBase
       else
       {
         // update shadow
-        String deviceId = deviceIdFieldName;
-        if (deviceId != null & Validator.isNotBlank(deviceId))
+        if (thingName != null & Validator.isNotBlank(thingName))
         {
           // geIoTDevice.delete(); // delete shadow
           LOGGER.info(System.currentTimeMillis() + ": ClientId: " + clientId + ": updating the device state");
@@ -273,7 +272,7 @@ public class AwsIoTHubOutboundTransport extends OutboundTransportBase
         }
         else
         {
-          LOGGER.warn("FAILED_TO_SEND_INVALID_DEVICE_ID", deviceIdFieldName);
+          LOGGER.warn("FAILED_TO_SEND_INVALID_DEVICE_ID", thingName);
         }
       }
     }

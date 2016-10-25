@@ -55,7 +55,7 @@ public class AwsIoTHubInboundTransport extends InboundTransportBase implements R
   private boolean                   isEventHubType         = true;
   private String                    iotServiceType         = "";
 
-  private String                    deviceIdFieldName      = "";
+  private String                    thingName              = "";
 
   private String                    clientEndpoint         = "";
   private String                    x509Certificate        = "";
@@ -131,7 +131,7 @@ public class AwsIoTHubInboundTransport extends InboundTransportBase implements R
       KeyStorePasswordPair pair = AwsIoTHubUtil.getKeyStorePasswordPair(x509Certificate, privateKey, null);
 
       // create AwsClient
-      clientId = String.format("%s-%s", deviceIdFieldName, new BigInteger(128, new SecureRandom()).toString(32));
+      clientId = String.format("%s-%s", thingName, new BigInteger(128, new SecureRandom()).toString(32));
       awsClient = new AWSIotMqttClient(clientEndpoint, clientId, pair.keyStore, pair.keyPassword);
       if (awsClient == null)
       {
@@ -144,7 +144,7 @@ public class AwsIoTHubInboundTransport extends InboundTransportBase implements R
       if (!isEventHubType)
       {
         LOGGER.info(System.currentTimeMillis() + ": ClientId: " + ": Attaching device:" + geIoTDevice.getThingName());
-        geIoTDevice = new AwsIoTHubDevice(deviceIdFieldName);
+        geIoTDevice = new AwsIoTHubDevice(thingName);
         awsClient.attach(geIoTDevice);
       }
 
@@ -232,12 +232,12 @@ public class AwsIoTHubInboundTransport extends InboundTransportBase implements R
       }
     }
     // Device Id Field Name
-    if (hasProperty("deviceid"))
+    if (hasProperty("thingName"))
     {
-      String newDeviceIdFieldName = getProperty("deviceid").getValueAsString();
-      if (!deviceIdFieldName.equals(newDeviceIdFieldName))
+      String newThingName = getProperty("thingName").getValueAsString();
+      if (!thingName.equals(newThingName))
       {
-        deviceIdFieldName = newDeviceIdFieldName;
+        thingName = newThingName;
         somethingChanged = true;
       }
     }

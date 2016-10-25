@@ -6,12 +6,12 @@
   <description>${com.esri.geoevent.adapter.aws-adapter.CONNECTOR_IN_DESC}</description>
   <properties>
     <shown>
+      <property label="Client Endpoint" name="endpoint" source="transport" default="My-IoT-Hub-Name.iot.us-west-2.amazonaws.com"/>
+      <property label="AWS IoT Topic" name="topic" source="transport" default="geoevent/topic1"/>
       <property label="IoT Service Type" name="iotservicetype" source="transport" default="IOT_TOPIC"/>
-      <property label="Device Id Field Name" name="deviceid" source="transport" default="MyLightBlub"/>
-      <property label="Client Endpoint" name="endpoint" source="transport" default="A1OAECNIGB9KXE.iot.us-west-2.amazonaws.com"/>
+      <property label="Thing Name" name="thingName" source="transport" default="thing1"/>
       <property label="Certificate" name="X509certificate" source="transport" default="C:/temp/certs/cert.pem"/>
       <property label="PrivateKey" name="privateKey" source="transport" default="C:/tmp/certs/private.pem"/>
-      <property xlabel="AWS IoT Topic" name="topic" source="transport" default="SBC/test"/>
       <property label="Create GeoEvent Definition" name="CreateGeoEventDefinition" source="adapter" default="true"/>
       <property label="GeoEvent Definition Name (Existing)" name="ExistingGeoEventDefinitionName" source="adapter"/>
       <property label="GeoEvent Definition Name (New)" name="NewGeoEventDefinitionName" source="adapter" default="NewFeatureGeoEventDef"/>

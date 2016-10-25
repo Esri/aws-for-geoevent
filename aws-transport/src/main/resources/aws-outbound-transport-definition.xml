@@ -7,36 +7,41 @@
   <description>${com.esri.geoevent.transport.aws-transport.TRANSPORT_OUT_DESC}</description>
 
   <propertyDefinitions>
+    <propertyDefinition propertyName="endpoint"
+      label="${com.esri.geoevent.transport.aws-transport.TRANSPORT_OUT_ENDPOINT_LBL}"
+      description="${com.esri.geoevent.transport.aws-transport.TRANSPORT_OUT_ENDPOINT_DESC}"
+      propertyType="String" defaultValue="My-IoT-Hub-Name.iot.us-west-2.amazonaws.com"
+      mandatory="true" readOnly="false" />
+
+    <propertyDefinition propertyName="topic"
+      label="${com.esri.geoevent.transport.aws-transport.TRANSPORT_OUT_TOPIC_LBL}"
+      description="${com.esri.geoevent.transport.aws-transport.TRANSPORT_OUT_TOPIC_DESC}"
+      propertyType="String" defaultValue="geoevent/topic1" mandatory="true"
+      readOnly="false" />
+
     <propertyDefinition propertyName="iotservicetype"
       label="${com.esri.geoevent.transport.aws-transport.IOT_SERVICE_TYPE_LBL}"
       description="${com.esri.geoevent.transport.aws-transport.IOT_SERVICE_TYPE_DESC}"
       propertyType="String" defaultValue="IOT_TOPIC" mandatory="true"
       readOnly="false" />
-    <propertyDefinition propertyName="deviceid"
-      label="${com.esri.geoevent.transport.aws-transport.TRANSPORT_OUT_DEVICE_ID_LBL}"
-      description="${com.esri.geoevent.transport.aws-transport.TRANSPORT_OUT_DEVICE_ID_DESC}"
-      propertyType="String" defaultValue="MyLightBlub" mandatory="false"
+
+    <propertyDefinition propertyName="thingName"
+      label="${com.esri.geoevent.transport.aws-transport.TRANSPORT_OUT_THING_NAME_LBL}"
+      description="${com.esri.geoevent.transport.aws-transport.TRANSPORT_OUT_THING_NAME_DESC}"
+      propertyType="String" defaultValue="thing1" mandatory="false"
       readOnly="false" />
-    <propertyDefinition propertyName="endpoint"
-      label="${com.esri.geoevent.transport.aws-transport.TRANSPORT_OUT_ENDPOINT_LBL}"
-      description="${com.esri.geoevent.transport.aws-transport.TRANSPORT_OUT_ENDPOINT_DESC}"
-      propertyType="String" defaultValue="A1OAECNIGB9KXE.iot.us-west-2.amazonaws.com"
-      mandatory="true" readOnly="false" />
+
     <propertyDefinition propertyName="X509certificate"
       label="${com.esri.geoevent.transport.aws-transport.TRANSPORT_OUT_CERT_LBL}"
       description="${com.esri.geoevent.transport.aws-transport.TRANSPORT_OUT_CERT_DESC}"
       propertyType="String" defaultValue="C:/tmp/certs/cert.pem"
       mandatory="true" readOnly="false" />
+
     <propertyDefinition propertyName="privateKey"
-      label="${com.esri.geoevent.transport.aws-transport.TRANSPORT_OUT_PRIVATEKEY_LBL}"
-      description="${com.esri.geoevent.transport.aws-transport.TRANSPORT_OUT_PRIVATEKEY_DESC}"
+      label="${com.esri.geoevent.transport.aws-transport.TRANSPORT_OUT_PRIVATE_KEY_LBL}"
+      description="${com.esri.geoevent.transport.aws-transport.TRANSPORT_OUT_PRIVATE_KEY_DESC}"
       propertyType="String" defaultValue="C:/tmp/certs/private.pem"
       mandatory="true" readOnly="false" />
-    <propertyDefinition propertyName="topic"
-      label="${com.esri.geoevent.transport.aws-transport.TRANSPORT_OUT_TOPIC_LBL}"
-      description="${com.esri.geoevent.transport.aws-transport.TRANSPORT_OUT_TOPIC_DESC}"
-      propertyType="String" defaultValue="SBC/test" mandatory="true"
-      readOnly="false" />
   </propertyDefinitions>
 
 </transport>
