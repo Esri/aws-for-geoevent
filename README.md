@@ -1,6 +1,6 @@
 # aws-for-geoevent
 
-ArcGIS GeoEvent Server AWS Input and Output Connectors for sending and receiving IoT data to and from Amazon AWS IoT Gateway.
+ArcGIS GeoEvent Server AWS input and output Connectors for sending and receiving IoT data to and from Amazon AWS IoT Gateway.
 
 ![App](aws-for-geoevent.png?raw=true)
 
@@ -13,7 +13,7 @@ ArcGIS GeoEvent Server AWS Input and Output Connectors for sending and receiving
 
 Building the source code:
 
-1. Make sure Maven and ArcGIS GeoEvent Extension SDK are installed on your machine.
+1. Make sure Maven and ArcGIS GeoEvent Server SDK are installed on your machine.
 2. Run 'mvn install -Dcontact.address=[YourContactEmailAddress]'
 
 Installing the built jar files:
@@ -29,7 +29,7 @@ Installing the built jar files:
 
 ## Resources
 
-* [Download the connector's tutorial](http://www.arcgis.com/home/item.html?id=TBD) from the ArcGIS GeoEvent Server Gallery
+* [Download the connector's tutorial](http://www.arcgis.com/home/item.html?id=TBD) from the ArcGIS GeoEvent Gallery
 * [ArcGIS GeoEvent Server Resources](http://links.esri.com/geoevent)
 * [ArcGIS Blog](http://blogs.esri.com/esri/arcgis/)
 * [twitter@esri](http://twitter.com/esri)
@@ -60,5 +60,5 @@ limitations under the License.
 A copy of the license is available in the repository's [license.txt](license.txt?raw=true) file.
 
 [](ArcGIS, GeoEvent, Processor)
-[](Esri Tags: ArcGIS GeoEvent Processor for Server)
+[](Esri Tags: ArcGIS GeoEvent Server)
 [](Esri Language: Java)
