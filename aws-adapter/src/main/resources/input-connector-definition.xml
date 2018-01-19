@@ -1,7 +1,7 @@
 <connectorDefinition label="${com.esri.geoevent.adapter.aws-adapter.CONNECTOR_IN_LABEL}"
   name="receive-json-from-aws-iot-gateway" type="inbound">
-  <adapter uri="com.esri.ges.adapter.inbound/Generic-JSON/10.5.0"/>
-  <transport uri="com.esri.geoevent.transport.aws.inbound/AWS-IoT/10.5.0" />
+  <adapter uri="com.esri.ges.adapter.inbound/Generic-JSON/10.6.0"/>
+  <transport uri="com.esri.geoevent.transport.aws.inbound/AWS-IoT/10.6.0" />
   <defaultName>aws-json-in</defaultName>
   <description>${com.esri.geoevent.adapter.aws-adapter.CONNECTOR_IN_DESC}</description>
   <properties>
